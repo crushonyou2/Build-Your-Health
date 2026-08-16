@@ -55,8 +55,8 @@ JSP 안에 쿼리를 쓰면 화면 수정이 곧 데이터 수정이 됩니다. 
 상품 조회 일부는 `dao/ProductRepository`+`dto/Product`로** 옮겨 화면이 값만 받도록 했습니다.
 
 **여기까지가 전부입니다.** `ProductRepository`를 실제로 쓰는 화면은 `product/product.jsp`와 `cart/addCart.jsp`
-두 곳뿐이고, **나머지 화면 대부분은 JSP 안에서 직접 SQL을 실행합니다** — `executeQuery` 계열이 14곳,
-JSTL SQL 태그(`sql:setDataSource`·`sql:query`)를 쓰는 화면이 3곳입니다.
+두 곳뿐이고, **나머지 화면 대부분은 JSP 안에서 직접 SQL을 실행합니다.** 회원 관련 화면 3곳은
+JSTL SQL 태그(`sql:setDataSource`·`sql:query`)로, 그 외 다수는 JSP 안의 JDBC 코드로 조회합니다.
 
 **한 프로젝트 안에 세 가지 방식이 공존합니다** — DAO 경유, JSP 내 JDBC, JSTL SQL 태그.
 과제를 진행하며 방식을 바꿔 갔는데 앞서 만든 화면을 되돌려 정리하지 못한 결과입니다.
